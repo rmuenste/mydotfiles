@@ -59,8 +59,9 @@ vnoremap > >gv
 
 set number " show line numbers
 
-" set indentation for tabs
-set tabstop=2
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 execute pathogen#infect()
 
