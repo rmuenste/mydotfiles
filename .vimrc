@@ -18,12 +18,17 @@ endif
 " Better copy & paste
 set clipboard=unnamed
 
+filetype on
+filetype plugin on
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+set nocp
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -48,6 +53,7 @@ inoremap <C-U> <C-G>u<C-U>
 
 " remap <esc> to <tab>
 nnoremap <Tab> <Esc>
+nnoremap <jk> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
@@ -86,6 +92,9 @@ set wildignore+=*/coverage/*
 " Color scheme
 set t_Co=256
 color wombat256mod
+
+let g:airline_powerline_fonts=1
+let g:airline_theme="powerlineish"
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
