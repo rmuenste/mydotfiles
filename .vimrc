@@ -23,8 +23,27 @@ filetype plugin on
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
+" mandatory option for omnicpp_complete
 set nocompatible
 set nocp
+
+set tags+=~/.vim/tags/cpp
+" OmniCompletionOptions
+"set completeopt=menu,menuone
+"let OmniCpp_NamespaceSearch=2
+"let OmniCpp_ShowPrototypeInAbbr=1
+" " let OmniCpp_MayCompleteScope=1
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
