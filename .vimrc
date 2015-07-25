@@ -15,6 +15,7 @@ if v:progname =~? "evim"
   finish
 endif
 
+
 " Better copy & paste
 set clipboard=unnamed
 
@@ -28,6 +29,8 @@ set nocompatible
 set nocp
 
 set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/sdl2
+set tags+=~/.vim/tags/gl
 " OmniCompletionOptions
 "set completeopt=menu,menuone
 "let OmniCpp_NamespaceSearch=2
@@ -90,6 +93,7 @@ set softtabstop=2
 
 execute pathogen#infect()
 
+		
 set laststatus=2
 
 " python mode settings
@@ -168,3 +172,11 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<c-y>"
+let g:UltiSnipsListSnippets="<c-x>" 
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  
+
